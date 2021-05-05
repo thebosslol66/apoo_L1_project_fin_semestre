@@ -1,4 +1,8 @@
-public class Chip {
+/**
+ *Classe des pions sur le plateau et dans les storages
+ */
+
+ public class Chip {
 	
 	/**
 	 * Gaarde en memoire la couleur du pion

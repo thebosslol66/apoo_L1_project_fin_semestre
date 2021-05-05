@@ -1,3 +1,6 @@
+/**
+ *Classe contenant les set de pion du joueur et du plateau de jeu
+ */
 public class Storage {
 	
 	/**
@@ -68,7 +71,7 @@ public class Storage {
 			m_chipList[m_chipList.length -1] = null;
 			return chipToRemove;
 		}
-		return new Chip();
+		return null;
 	}
 	
 	/**

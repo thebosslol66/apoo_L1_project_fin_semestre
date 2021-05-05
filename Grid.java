@@ -1,3 +1,6 @@
+/**
+ *Classe qui contient le plateau du jeu avec les positions des pions et la liste des pions vert hors du plateau
+  */
 public class Grid {
 	
 	/**

@@ -1,3 +1,6 @@
+/**
+ *Classe qui gere le joueur, avec sa position et son stockage de pions rouge
+ */
 public class Player{
 	
 	/**
