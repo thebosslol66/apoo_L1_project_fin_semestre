@@ -3,6 +3,11 @@
  */
 public class Translation {
 	
+	
+	/**
+	 *Texte du jeu pendant une partie
+	 */
+	
 	public static final String wrongWriting = "Erreur dans la saisie, veuillez reessayer";
 	
 	public static final String putEmptyCell = "Bien joue. La case etait vide : vous evacuez un pion rouge.";
