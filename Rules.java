@@ -36,9 +36,9 @@ public class Rules {
 	*@param player Le joueur
 	*@param cara Le type de regle que le joueur a choisit
 	*/
-	private void loop(Grid grid, Player player,String cara){
+	public void loop(Grid grid, Player player,String cara){
 		
-		switch(cara){
+		switch(idRule){
 			case 1:
 				
 			
@@ -50,6 +50,10 @@ public class Rules {
 		}
 		
 	}
+	
+	
+	
+	
 	
 
 }
