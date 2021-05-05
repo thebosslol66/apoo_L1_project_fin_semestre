@@ -6,7 +6,6 @@ public class Rules {
 	
 	private int m_idRule;
 	
-	
 	private boolean m_choucrouteRule;
 	
 	
@@ -40,12 +39,6 @@ public class Rules {
 		
 	}
 	
-	
-	public boolean hasChoucrouteRule(){
-		return choucrouteRule;
-	}
-	
-	
 	// ..
 	//getNumberSidesDice() --- retourne la variable global private
 	// fct loop (grid ,player  ,caractere (action))
@@ -55,7 +48,10 @@ public class Rules {
 	*@return Le nombre de faces du des
 	*/
 	private int getNumberSidesDice(){
-		return m_sidesDice;
+	
+		
+		
+	return sidesDice;
 	}
 	
 	
@@ -67,8 +63,8 @@ public class Rules {
 	*/
 	public void loop(Grid grid, Player player,char cara){
 		
-		switch(m_idRule){
-			case 1:{
+		switch(idRule){
+			case 1:{ 	
 				
 			loopRule1(grid, player, cara);
 			}break;
@@ -76,6 +72,7 @@ public class Rules {
 			
 			loopRule2();
 			}break;
+			
 		}
 		
 	}
@@ -86,54 +83,30 @@ public class Rules {
 	*@param player Le joueur
 	*/
 	public boolean hasWin(Grid grid, Player player){
-		switch(m_idRule){
+		switch(idRule){
 			case 1:{
-				return hasWinRule1(grid, player);
+				return hasWinRule1(Grid grid, Player player);
 			} break;
 			case 2:{
-				return hasWinRule2(grid, player);
-			} break;
-			
-			default:{
-				return hasWinRule1(grid, player);
+				return hasWinRule2(Grid grid, Player player);
 			} break;
 		}
 		
 	}
 	
-	
-	private boolean hasWinRule1(Grid grid, Player player){
-		return player.hasNoRed();
-	}
-	
-	private boolean hasWinRule2(Grid grid, Player player){
-		return player.hasNoRed();
-	}
 	
 	public boolean hasLose(Grid grid, Player player){
-		switch(m_idRule){
+		switch(idRule){
 			case 1:{
-				return hasLoseRule1(grid, player);
+				return hasLoseRule1(Grid grid, Player player);
 			} break;
 			case 2:{
-				return hasLoseRule2(grid, player);
-			} break;
-			
-			default:{
-				return hasLoseRule1(grid, player);
+				return hasLoseRule2(Grid grid, Player player);
 			} break;
 		}
 		
 	}
 	
-
-	private boolean hasLoseRule1(Grid grid, Player player){
-		return player.hasFullRed();
-	}
-	
-	private boolean hasLoseRule2(Grid grid, Player player){
-		return player.hasFullRed();
-
 	
 	
 	
@@ -229,7 +202,6 @@ public class Rules {
 	player.setPosition( (player.getPosition().getX() + nbCellMove) % grid.getWidth(), (int)((player.getPosition().getX() + nbCellMove) / grid.getWidth() + player.getPosition().getY())%grid.getHeight() );
 	
 	
-
 	}
 
 }

@@ -3,11 +3,12 @@
  */
 public class Translation {
 	
-	
-	/**
-	 *Texte du jeu pendant une partie
-	 */
-	
+	public static final String Rules = " Bienvenue a tous et a toutes dans le jeu de la memmmmmmmoirrrrrrrrrreeee !!!!!!!!!!!!" 
+							+  " Vous avez deux choix qui s'offrent a vous !!!!!!!!!!!!!!!!"
+							+ "Le premier : le jeu 'normal', des regles chiantes, une quadrillage petit, tout est facile !!!!"
+							+ "Le second  : LE JEU CHOUCROUTEE, DU PLAISIR ? OUI !! "
+							+ "Appuyez sur 1 pour avoir acces au jeu de base !"
+							+ "Appuyez sur 2 pour avoir acces au jeu choucroute ! "
 	public static final String wrongWriting = "Erreur dans la saisie, veuillez reessayer";
 	
 	public static final String putEmptyCell = "Bien joue. La case etait vide : vous evacuez un pion rouge.";
@@ -45,5 +46,7 @@ public class Translation {
 	public static final String seeGridBelow = "Comme vous pouvez voir sur la grille en dessous";
 	
 	public static final String mystere = "choucroute";
+	
+	
 
 }
