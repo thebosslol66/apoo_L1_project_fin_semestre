@@ -3,14 +3,15 @@
  */
 public class Translation {
 	
-	public static final String Rules = " Bienvenue a tous et a toutes dans le jeu de la memmmmmmmoirrrrrrrrrreeee !!!!!!!!!!!!\¬" 
-							+  " Vous avez deux choix qui s'offrent a vous !!!!!!!!!!!!!!!!\n"
+	public static final String Rules = "Bienvenue a tous et a toutes dans le jeu de la memmmmmmmoirrrrrrrrrreeee !!!!!!!!!!!!\n" 
+							+  "Vous avez deux choix qui s'offrent a vous !!!!!!!!!!!!!!!!\n"
 							+ "Le premier : le jeu 'normal', des regles chiantes, une quadrillage petit, tout est facile !!!!\n"
 							+ "Le second  : LE JEU CHOUCROUTEE, DU PLAISIR ? OUI !! \n"
-							+"Le troisieme : le jeu 'normal' mais avec un maximum de 20 coups donc réflechissez bien !!\n"
+							+"Le troisieme : le jeu 'normal' mais avec un maximum de 20 coups donc reflechissez bien !!\n"
 							+ "Appuyez sur 1 pour avoir acces au jeu de base !\n"
 							+ "Appuyez sur 2 pour avoir acces au jeu choucroute ! \n"
 							+"Appuyez sur 3 pour avoir acces au jeu avec un nombre maximum de 20coups !";
+	
 	public static final String wrongWriting = "Erreur dans la saisie, veuillez reessayer";
 	
 	public static final String putEmptyCell = "Bien joue. La case etait vide : vous evacuez un pion rouge.";

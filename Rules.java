@@ -40,7 +40,7 @@ public class Rules {
 				m_sidesDice = 6;
 				m_choucrouteRule = false;
 				m_maxMove = 20;
-				m_actualMove = <0;
+				m_actualMove =20;
 			
 			}break;
 		}
@@ -52,6 +52,39 @@ public class Rules {
 	//getNumberSidesDice() --- retourne la variable global private
 	// fct loop (grid ,player  ,caractere (action))
 	
+	 public static void afficherRegles(String arg) {
+	String affichageFinal = ""; 
+	
+	int plusGrand = 0;
+	 
+	final String CONTOUR = "#";
+	final String BEGIN_LINE = CONTOUR + CONTOUR + ' ';
+	final String END_LINE = ' ' + CONTOUR + CONTOUR + "\n";
+	
+	String[] args = arg.split("\n");
+	for (String text : args){
+		plusGrand = Math.max(plusGrand, text.length());
+	}
+	
+	for (int i = 0; i < plusGrand + 6; i++){
+	affichageFinal += CONTOUR;
+	}
+	affichageFinal += "\n";
+	for (String text : args){
+		affichageFinal += BEGIN_LINE + text;
+	for (int i = 0; i < plusGrand - text.length(); i++){
+		affichageFinal += " ";
+		}		
+		affichageFinal += END_LINE;
+	}
+	for (int i = 0; i < plusGrand + 6; i++){
+	affichageFinal += CONTOUR;
+	}
+	affichageFinal += "\n";
+	
+	Ecran.afficher(affichageFinal);
+ }
+
 	public boolean hasChoucrouteRule(){
 		return m_choucrouteRule;
 	}
@@ -283,7 +316,7 @@ public class Rules {
 				}
 				else if (grid.getCell(player.getPosition()).hasChoucrouteChip()){ // la case est deja occupee par un pion choucroute : on supprime la choucroute ainsi qu'un pion rouge du joueur et on reduit de 1 son stockage
 					//Ajouter texte de choucroute
-					grid.getCell(player.getPosition()).clearChip()
+					grid.getCell(player.getPosition()).clearChip();
 					player = new Player(player.getStorageLength()-1, player.getNumberRedChip()-1);
 				}
 				
@@ -309,7 +342,7 @@ public class Rules {
 	}
 	
 	
-	private void loopRule1(Grid grid, Player player, char choix){
+	private void loopRule3(Grid grid, Player player, char choix){
 		m_actualMove += 1;
 		switch (choix) {
 		

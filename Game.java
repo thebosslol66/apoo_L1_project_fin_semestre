@@ -33,9 +33,7 @@ public class Game{
 		m_rule = rule;
 		m_grid = new Grid(width, height, m_rule.hasChoucrouteRule());
 		m_player = m_grid.getNewPlayer();
-		Ecran.afficherln(m_rule.getNumberSidesDice());
 		m_dice = new Dice(m_rule.getNumberSidesDice());
-		Ecran.afficherln(m_dice.launch());
 	}
 	
 	
