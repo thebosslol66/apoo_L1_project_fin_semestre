@@ -12,14 +12,31 @@ public class Rules {
 	
 	private int m_sidesDice;
 	
+	private int m_maxMove;
+	
 	
 	/**
 	*Constructeur qui initialise les valeurs initiales 
 	*
 	*/
 	Rules(int idRule){
-		
 		m_idRule = idRule;
+		
+		switch(m_idRule){
+			case 1:{
+				m_sidesDice = 6;
+				m_choucrouteRule = false;
+				m_maxMove = -1;
+			
+			}break;
+			case 2:{
+				m_sidesDice = 6;
+				m_choucrouteRule = true;
+				m_maxMove = -1;
+			
+			}break;
+		}
+		
 		
 	}
 	
@@ -30,7 +47,6 @@ public class Rules {
 	
 	
 	// ..
-	// DeplacementMax
 	//getNumberSidesDice() --- retourne la variable global private
 	// fct loop (grid ,player  ,caractere (action))
 	
@@ -154,9 +170,6 @@ public class Rules {
 					
 				}
 				
-				Ecran.afficherln(Translation.Dice ," = ", nbDice);
-				movePlayer(nbDice);
-				
 			}break;
 			
 			case 'R':
@@ -184,17 +197,13 @@ public class Rules {
 				}
 				
 				
-				Ecran.afficherln(Translation.Dice ," = ", nbDice);
-				movePlayer(nbDice);
-				
 			
 			} break;
 				
 			case 'A':	
 			case 'a': {
 				Ecran.afficherln(Translation.skip);
-				Ecran.afficherln(Translation.Dice ," = ", nbDice);
-				movePlayer(nbDice);
+				
 				
 			} break;
 			

@@ -29,12 +29,18 @@ public class Grid {
 	 *@param width Largeur de la nouvelle grille
 	 *@param height Hauteur de la nouvelle grille
 	 */
-	public Grid(int width, int height){
+	public Grid(int width, int height, boolean createChoucrouteGrid){
 		m_width = width;
 		m_height = height;
 		m_caseList = new Cell[m_height][m_width];
 		m_bank = new Storage((int)Math.ceil(m_width*m_height/2));
-		setCaseChoucrouteDistribution();
+		
+		if (createChoucrouteGrid){
+			setCaseChoucrouteDistribution();
+		}
+		else{
+			setCaseDistribution()
+		}
 	}
 	
 	/**

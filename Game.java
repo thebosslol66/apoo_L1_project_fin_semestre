@@ -30,11 +30,10 @@ public class Game{
 	 *@param height La hauteur de la grille
 	 */
 	public void newGame(int width, int height, Rules rule){
-		m_grid = new Grid(width, height);
-		m_player = m_grid.getNewPlayer();
 		m_rule = rule;
-		
-		
+		m_grid = new Grid(width, height, m_rule.hasChoucrouteRule());
+		m_player = m_grid.getNewPlayer();
+		Dice m_dice = new Dice(m_rule.getNumberSidesDice());
 	}
 	
 	
@@ -44,13 +43,27 @@ public class Game{
 	*/
 	public void loopGame(){
 	char choix;	
-	Dice m_dice = new Dice(6);
+	
 	
 	int nbDice = 0;
-	do {
 		
 		displayGame();
+		
+		choix = Clavier.saisirChar();	
+		while ( (choix != 'q' && choix != 'Q') && (choix != 'r' && choix != 'R') && (choix != 'a' &&  choix != 'A') && (choix != 'p' && choix != 'P')) {
+		Ecran.afficherln(Translation.wrongWriting);
+		choix = Clavier.saisirChar();
+		m_rule.loop(m_grid, m_player, choix);
+		
+		}
+	while (choix != 'q' && choix != 'Q' && !m_rule.hasWin() && !m_rule.hasLose()); {
+		
 		nbDice = m_dice.launch();
+		Ecran.afficherln(Translation.Dice ," = ", nbDice);
+		
+		movePlayer(nbDice);
+		displayGame();
+		
 		
 		choix = Clavier.saisirChar();	
 		while ( (choix != 'q' && choix != 'Q') && (choix != 'r' && choix != 'R') && (choix != 'a' &&  choix != 'A') && (choix != 'p' && choix != 'P')) {
@@ -59,10 +72,8 @@ public class Game{
 		
 		}
 		
-
-	
-			
-	} while (choix != 'q' && choix != 'Q' && !m_player.hasNoRed() && !m_player.hasFullRed());
+		m_rule.loop(m_grid, m_player, choix);
+	} 
 	
 	
 	
