@@ -53,6 +53,11 @@ public class Rules {
 		
 	}
 	
+	/**
+	*La boucle du jeu qui choisit quel type de règle du jeu le joueur veut
+	*@param grid La grille
+	*@param player Le joueur
+	*/
 	public boolean hasWin(Grid grid, Player player){
 		switch(idRule){
 			case 1:{
