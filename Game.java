@@ -19,15 +19,20 @@ public class Game{
 	*Le de
 	*/
 	private Dice m_dice;
+	
+	
+	private Rules m_rule;
+	
+	
 	/**
 	 *Creer une nouvelle partie
 	 *@param width La largeur de la grille
 	 *@param height La hauteur de la grille
 	 */
-	public void newGame(int width, int height){
+	public void newGame(int width, int height, Rules rule){
 		m_grid = new Grid(width, height);
 		m_player = m_grid.getNewPlayer();
-		
+		m_rule = rule;
 		
 		
 	}

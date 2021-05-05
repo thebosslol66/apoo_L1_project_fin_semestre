@@ -4,7 +4,7 @@
 public class Rules {
 	
 	
-	private int idRule;
+	private int m_idRule;
 	/**
 	*Constructeur qui initialise les valeurs initiales 
 	*
@@ -41,7 +41,7 @@ public class Rules {
 	public void loop(Grid grid, Player player,char cara){
 		
 		switch(idRule){
-			case 1:{
+			case 1:{ 	
 				
 			loopRule1(grid, player, cara);
 			}break;
