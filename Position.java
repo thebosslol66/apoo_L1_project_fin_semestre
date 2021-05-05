@@ -1,3 +1,6 @@
+/**
+ *Classe qui sert a la position du joueur sur la grille
+ */
 public class Position {
 	/**
 	 * Position en x

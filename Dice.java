@@ -1,3 +1,7 @@
+/**
+ *Classe qui gere le de de la partie
+ * Genere un de a x face et tire aleatoirement un nombre entre 1 et x
+ */
 public class Dice {
 	
 	/**
