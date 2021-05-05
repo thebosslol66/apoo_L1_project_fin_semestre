@@ -34,7 +34,7 @@ public class Grid {
 		m_height = height;
 		m_caseList = new Cell[m_height][m_width];
 		m_bank = new Storage((int)Math.ceil(m_width*m_height/2));
-		setCaseDistribution();
+		setCaseChoucrouteDistribution();
 	}
 	
 	/**
@@ -66,7 +66,7 @@ public class Grid {
 			if (nbRedCeil > 0){
 				pos = (int)(Math.random()*((m_width*m_height)-(int)Math.ceil(m_width*m_height/3)*2+nbRedCeil + nbGreenCeil));
 				for (int i = 0; i <= pos; i++){
-					if (m_caseList[(int)(i/m_width)][i-((int)(i/m_width)*m_width)].getChipColor() != ""){
+					if (m_caseList[(int)(i/m_width)][i-((int)(i/m_width)*m_width)].hasChip()){
 						pos += 1;
 					}
 				}
@@ -79,7 +79,7 @@ public class Grid {
 			if (nbGreenCeil > 0){
 				pos = (int)(Math.random()*((m_width*m_height)-(int)Math.ceil(m_width*m_height/3)*2+nbRedCeil + nbGreenCeil));
 				for (int i = 0; i <= pos; i++){
-					if (m_caseList[(int)(i/m_width)][i-((int)(i/m_width)*m_width)].getChipColor() != ""){
+					if (m_caseList[(int)(i/m_width)][i-((int)(i/m_width)*m_width)].hasChip()){
 						pos += 1;
 					}
 				}
@@ -87,6 +87,70 @@ public class Grid {
 				newChip.setGreen();
 				m_caseList[(int)(pos/m_width)][pos-((int)(pos/m_width)*m_width)].setChip(newChip);
 				nbGreenCeil -=1;
+			}
+		}
+		
+		for (int i=0; i < Math.floor(m_width*m_height/3); i++){
+			addGreenChip();
+		}
+	}
+	
+
+	/**
+	 *Initialise la grille avec les pions de couleur sur la grille ainsi que la banque de pions vert et ajoute le pion choucroute
+	 */
+	private void setCaseChoucrouteDistribution(){
+		int nbRedCeil = (int)Math.ceil((m_width*m_height)/3);
+		int nbGreenCeil = (int)Math.ceil((m_width*m_height)/3);
+		int nbChoucrouteCeil = (int)Math.floor((m_width*m_height)/6);
+		
+		for (int i = 0; i < m_height; i++){
+			for (int j = 0; j < m_width; j++){
+				m_caseList[i][j] = new Cell();
+			}
+		}
+		
+		int pos;
+		Chip newChip;
+		
+		while ((nbRedCeil + nbGreenCeil + nbChoucrouteCeil) > 0){
+			if (nbRedCeil > 0){
+				pos = (int)(Math.random()*((m_width*m_height)-((int)Math.ceil(m_width*m_height/3)*2 + (int)Math.floor((m_width*m_height)/6))+nbRedCeil + nbGreenCeil + nbChoucrouteCeil));
+				for (int i = 0; i <= pos; i++){
+					if (m_caseList[(int)(i/m_width)][i-((int)(i/m_width)*m_width)].hasChip()){
+						pos += 1;
+					}
+				}
+				newChip = new Chip();
+				newChip.setRed();
+				m_caseList[(int)(pos/m_width)][pos-((int)(pos/m_width)*m_width)].setChip(newChip);
+				nbRedCeil -=1;
+			}
+			
+			if (nbGreenCeil > 0){
+				pos = (int)(Math.random()*((m_width*m_height)-((int)Math.ceil(m_width*m_height/3)*2 + (int)Math.floor((m_width*m_height)/6))+nbRedCeil + nbGreenCeil + nbChoucrouteCeil));
+				for (int i = 0; i <= pos; i++){
+					if (m_caseList[(int)(i/m_width)][i-((int)(i/m_width)*m_width)].hasChip()){
+						pos += 1;
+					}
+				}
+				newChip = new Chip();
+				newChip.setGreen();
+				m_caseList[(int)(pos/m_width)][pos-((int)(pos/m_width)*m_width)].setChip(newChip);
+				nbGreenCeil -=1;
+			}
+			
+			if (nbChoucrouteCeil > 0){
+				pos = (int)(Math.random()*((m_width*m_height)-((int)Math.ceil(m_width*m_height/3)*2 + (int)Math.floor((m_width*m_height)/6))+nbRedCeil + nbGreenCeil + nbChoucrouteCeil));
+				for (int i = 0; i <= pos; i++){
+					if (m_caseList[(int)(i/m_width)][i-((int)(i/m_width)*m_width)].hasChip()){
+						pos += 1;
+					}
+				}
+				newChip = new Chip();
+				newChip.setChoucroute();
+				m_caseList[(int)(pos/m_width)][pos-((int)(pos/m_width)*m_width)].setChip(newChip);
+				nbChoucrouteCeil -=1;
 			}
 		}
 		
@@ -184,6 +248,9 @@ public class Grid {
 				}
 				else if (m_caseList[i][j].hasGreenChip()){
 					result += "G";
+				}
+				else if (m_caseList[i][j].hasChoucrouteChip()){
+					result += "C";
 				}
 				else {
 					result += ".";
