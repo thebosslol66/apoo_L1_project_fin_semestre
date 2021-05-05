@@ -19,14 +19,14 @@ public class Rules {
 	// fct loop (grid ,player  ,caractere (action))
 	
 	/**
-	*
-	*
+	*La fonction qui ret
+	*@return Le nombre de faces du des
 	*/
 	private int getNumberSidesDice(){
+	int sidesDice;
 		
 		
-		
-	return
+	return sidesDice;
 	}
 	
 	
