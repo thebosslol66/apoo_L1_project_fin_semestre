@@ -197,16 +197,7 @@ public class Game{
 	}
 	}
 	
-	/**
-	*Deplacer le joueur
-	*@param nbCellMove le nbre de case(s) que le joueur avance
-	 */
-	private void movePlayer(int nbCellMove){
-	
-	m_player.setPosition( (m_player.getPosition().getX() + nbCellMove) % m_grid.getWidth(), (int)((m_player.getPosition().getX() + nbCellMove) / m_grid.getWidth() + m_player.getPosition().getY())%m_grid.getHeight() );
-	
-	
-	}
+
 
 	
 	/**
