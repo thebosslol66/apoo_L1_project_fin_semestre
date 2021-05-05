@@ -1,6 +1,6 @@
 /**
- * Classe regrouppant toutes les traductions des textes du jeu
-  */
+ * Classe regroupant toutes les traductions des textes du jeu
+ */
 public class Translation {
 	
 	public static final String wrongWriting = "Erreur dans la saisie, veuillez reessayer";
