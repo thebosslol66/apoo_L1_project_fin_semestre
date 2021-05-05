@@ -5,6 +5,11 @@ public class Rules {
 	
 	
 	private int idRule;
+	
+	
+	private boolean choucrouteRule;
+	
+	
 	/**
 	*Constructeur qui initialise les valeurs initiales 
 	*
@@ -14,6 +19,12 @@ public class Rules {
 		
 		
 	}
+	
+	
+	public boolean hasChoucrouteRule(){
+		return choucrouteRule;
+	}
+	
 	
 	// ..
 	// DeplacementMax
@@ -56,26 +67,50 @@ public class Rules {
 	public boolean hasWin(Grid grid, Player player){
 		switch(idRule){
 			case 1:{
-				return hasWinRule1(Grid grid, Player player);
+				return hasWinRule1(grid, player);
 			} break;
 			case 2:{
-				return hasWinRule2(Grid grid, Player player);
+				return hasWinRule2(grid, player);
+			} break;
+			
+			default:{
+				return hasWinRule1(grid, player);
 			} break;
 		}
 		
 	}
 	
 	
+	private boolean hasWinRule1(Grid grid, Player player){
+		return player.hasNoRed();
+	}
+	
+	private boolean hasWinRule2(Grid grid, Player player){
+		return player.hasNoRed();
+	}
+	
 	public boolean hasLose(Grid grid, Player player){
 		switch(idRule){
 			case 1:{
-				return hasLoseRule1(Grid grid, Player player);
+				return hasLoseRule1(grid, player);
 			} break;
 			case 2:{
-				return hasLoseRule2(Grid grid, Player player);
+				return hasLoseRule2(grid, player);
+			} break;
+			
+			default:{
+				return hasLoseRule1(grid, player);
 			} break;
 		}
 		
+	}
+	
+	private boolean hasLoseRule1(Grid grid, Player player){
+		return player.hasFullRed();
+	}
+	
+	private boolean hasLoseRule2(Grid grid, Player player){
+		return player.hasFullRed();
 	}
 
 }
