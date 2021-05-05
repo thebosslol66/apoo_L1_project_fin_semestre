@@ -28,8 +28,10 @@ public class Game{
 	}
 	
 	
-	
-	
+	/**
+	/* La boucle du jeu
+	/*  Elle gère les déplacements du joueur, ainsi que les échanges entre le plateau et le joueur
+	*/
 	public void loopGame(){
 	char choix;	
 	Dice m_dice = new Dice(6);
