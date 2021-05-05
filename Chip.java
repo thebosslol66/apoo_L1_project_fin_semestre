@@ -23,6 +23,14 @@
 		m_color = "red";
 	}
 	
+	
+	/**
+	 *Met la couleur du pion a choucroute
+	 */
+	public void setChoucroute(){
+		m_color = "choucroute";
+	}
+	
 	/**
 	 * Verifie si le pion possede une couleur
 	 */
@@ -31,17 +39,6 @@
 			return true;
 		}
 		return false;
-	}
-	
-	/**
-	 * Permet de connaitre la couleur du pion
-	 * @return Le texte de la couleur du pion
-	 */
-	public String getColor(){
-		if (hasColor()){
-			return m_color;
-		}
-		return "";
 	}
 	
 	/**
@@ -58,5 +55,13 @@
 	 */
 	public boolean isRed(){
 		return m_color == "red";
+	}
+	
+	/**
+	 *Permet de savoir si le pion est une choucroute
+	 * @return vrai si le pion est une choucroute sinon faux
+	 */
+	public boolean isChoucroute(){
+		return m_color == "choucroute";
 	}
 }

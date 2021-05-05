@@ -38,23 +38,14 @@ public class Cell{
 	}
 	
 	/**
-	 * Donne la couleur du pion de la case
-	 *@return La couleur du pion de la case si il existe sinon renvoie une chaine vide
-	 */
-	public String getChipColor() {
-		if (hasChip()){
-			return m_chip.getColor();
-		}
-		return "";
-		
-	}
-	
-	/**
 	 * Verifie si la case possede un pion vert
 	 * @return vrai si le pion est de couleur verte sinon faux
 	 */
 	public boolean hasGreenChip(){
-		return "green" == getChipColor();
+		if (hasChip()){
+			return m_chip.isGreen();
+		}
+		return false;
 	}
 	
 	/**
@@ -62,7 +53,22 @@ public class Cell{
 	 * @return vrai si le pion est de couleur rouge sinon faux
 	 */
 	public boolean hasRedChip(){
-		return "red" == getChipColor();
+		if (hasChip()){
+			return m_chip.isRed();
+		}
+		return false;
+	}
+	
+	
+	/**
+	 * Verifie si la case possede un pion choucroute
+	 * @return vrai si le pion est une choucroute sinon faux
+	 */
+	public boolean hasChoucrouteChip(){
+		if (hasChip()){
+			return m_chip.isChoucroute();
+		}
+		return false;
 	}
 	
 	
