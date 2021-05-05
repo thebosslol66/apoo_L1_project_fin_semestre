@@ -4,19 +4,22 @@
 public class Rules {
 	
 	
-	private int idRule;
+	private int m_idRule;
 	
 	
-	private boolean choucrouteRule;
+	private boolean m_choucrouteRule;
+	
+	
+	private int m_sidesDice;
 	
 	
 	/**
 	*Constructeur qui initialise les valeurs initiales 
 	*
 	*/
-	Rules(){
+	Rules(int idRule){
 		
-		
+		m_idRule = idRule;
 		
 	}
 	
@@ -36,10 +39,7 @@ public class Rules {
 	*@return Le nombre de faces du des
 	*/
 	private int getNumberSidesDice(){
-	int sidesDice;
-		
-		
-	return sidesDice;
+		return m_sidesDice;
 	}
 	
 	
@@ -51,7 +51,7 @@ public class Rules {
 	*/
 	public void loop(Grid grid, Player player,char cara){
 		
-		switch(idRule){
+		switch(m_idRule){
 			case 1:{
 				
 			loopRule1(grid, player, cara);
@@ -70,7 +70,7 @@ public class Rules {
 	*@param player Le joueur
 	*/
 	public boolean hasWin(Grid grid, Player player){
-		switch(idRule){
+		switch(m_idRule){
 			case 1:{
 				return hasWinRule1(grid, player);
 			} break;
@@ -95,7 +95,7 @@ public class Rules {
 	}
 	
 	public boolean hasLose(Grid grid, Player player){
-		switch(idRule){
+		switch(m_idRule){
 			case 1:{
 				return hasLoseRule1(grid, player);
 			} break;
