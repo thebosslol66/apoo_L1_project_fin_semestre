@@ -41,7 +41,8 @@ public class Rules {
 		switch(idRule){
 			case 1:
 				
-			
+			Game.newGame();
+			Game.loopGame();
 			
 			case 2:
 			
