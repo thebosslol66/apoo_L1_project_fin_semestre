@@ -1,3 +1,8 @@
+/**
+ *Class Game
+ *Class qui gere le jeu, nouvelle partie, nouveau joueur, la boucle du jeu
+ */
+
 public class Game{
 	
 	/**

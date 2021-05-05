@@ -1,3 +1,8 @@
+/**
+ *Class Cell
+ *La classe qui gere les cases, avec les pions
+ */
+
 public class Cell{
 	
 	/**

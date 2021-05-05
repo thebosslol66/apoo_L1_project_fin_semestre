@@ -37,4 +37,5 @@ public class Translation {
 	public static final String seeGridBelow = "Comme vous pouvez voir sur la grille en dessous";
 	
 	public static final String mystere = "choucroute";
+
 }
