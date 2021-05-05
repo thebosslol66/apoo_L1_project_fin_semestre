@@ -53,7 +53,7 @@ public class Game{
 		choix = Clavier.saisirChar();	
 		
 		}
-		Cell cellule = m_grid.getCell(m_player.getPosition());	
+		
 
 	
 			

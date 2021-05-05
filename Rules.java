@@ -25,7 +25,7 @@ public class Rules {
 	*@return Le nombre de faces du des
 	*/
 	private int getNumberSidesDice(){
-	int sidesDice;
+	
 		
 		
 	return sidesDice;
@@ -49,6 +49,7 @@ public class Rules {
 			
 			loopRule2();
 			}break;
+			
 		}
 		
 	}
