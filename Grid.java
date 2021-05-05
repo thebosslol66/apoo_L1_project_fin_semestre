@@ -39,7 +39,7 @@ public class Grid {
 			setCaseChoucrouteDistribution();
 		}
 		else{
-			setCaseDistribution()
+			setCaseDistribution();
 		}
 	}
 	

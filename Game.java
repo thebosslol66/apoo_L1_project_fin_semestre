@@ -33,7 +33,9 @@ public class Game{
 		m_rule = rule;
 		m_grid = new Grid(width, height, m_rule.hasChoucrouteRule());
 		m_player = m_grid.getNewPlayer();
-		Dice m_dice = new Dice(m_rule.getNumberSidesDice());
+		Ecran.afficherln(m_rule.getNumberSidesDice());
+		m_dice = new Dice(m_rule.getNumberSidesDice());
+		Ecran.afficherln(m_dice.launch());
 	}
 	
 	
@@ -49,14 +51,16 @@ public class Game{
 		
 		displayGame();
 		
+		Ecran.afficherln(Translation.actions);
+		
 		choix = Clavier.saisirChar();	
 		while ( (choix != 'q' && choix != 'Q') && (choix != 'r' && choix != 'R') && (choix != 'a' &&  choix != 'A') && (choix != 'p' && choix != 'P')) {
 		Ecran.afficherln(Translation.wrongWriting);
 		choix = Clavier.saisirChar();
+		}
 		m_rule.loop(m_grid, m_player, choix);
 		
-		}
-	while (choix != 'q' && choix != 'Q' && !m_rule.hasWin() && !m_rule.hasLose()); {
+	while (choix != 'q' && choix != 'Q' && !m_rule.hasWin(m_grid, m_player) && !m_rule.hasLose(m_grid, m_player)) {
 		
 		nbDice = m_dice.launch();
 		Ecran.afficherln(Translation.Dice ," = ", nbDice);
@@ -64,6 +68,7 @@ public class Game{
 		movePlayer(nbDice);
 		displayGame();
 		
+		Ecran.afficherln(Translation.actions);
 		
 		choix = Clavier.saisirChar();	
 		while ( (choix != 'q' && choix != 'Q') && (choix != 'r' && choix != 'R') && (choix != 'a' &&  choix != 'A') && (choix != 'p' && choix != 'P')) {
@@ -73,10 +78,8 @@ public class Game{
 		}
 		
 		m_rule.loop(m_grid, m_player, choix);
-	} 
-	
-	
-	
+	}
+	displayGame();
 	}
 	
 	
@@ -98,8 +101,6 @@ public class Game{
 	Ecran.sautDeLigne();
 	Ecran.afficherln(m_grid.toDebugDisplay(m_player.getPosition()));
 	Ecran.sautDeLigne();
-	Ecran.afficherln(Translation.actions);	
-		
 	}
 	
 	
@@ -110,13 +111,13 @@ public class Game{
 	*Abandon
 	*/
 	public void endGame(){
-	if (m_player.hasNoRed()) {
+	if (m_rule.hasWin(m_grid, m_player) ) {
 	Ecran.afficherln(Translation.success);
 	Ecran.afficherln(Translation.goodBye);
 
 		
 	}
-	else if (m_player.hasFullRed()){
+	else if (m_rule.hasLose(m_grid, m_player)){
 	Ecran.afficherln(Translation.defeat);
 	Ecran.afficherln(Translation.youLose);	
 		
@@ -124,7 +125,8 @@ public class Game{
 	}
 	else {
 	Ecran.afficherln(Translation.putGreenChipCell);
-	Ecran.afficherln("Il(s) restai(ent) ",m_player.getNumberRedChip(),"pions rouges sur la grille");
+	Ecran.formater(Translation.numberRedChipStayOnGrid,m_player.getNumberRedChip());
+	Ecran.sautDeLigne();
 	Ecran.afficherln(Translation.seeGridBelow);
 	Ecran.afficher(m_grid.toDebugDisplay(m_player.getPosition()));
 		
@@ -162,5 +164,16 @@ private void displayRedChip(){
         }
 	}
 	
+	
+	/**
+	*Deplacer le joueur
+	*@param nbCellMove le nbre de case(s) que le joueur avance
+	 */
+	private void movePlayer(int nbCellMove){
+	
+	m_player.setPosition( (m_player.getPosition().getX() + nbCellMove) % m_grid.getWidth(), (int)((m_player.getPosition().getX() + nbCellMove) / m_grid.getWidth() + m_player.getPosition().getY())%m_grid.getHeight() );
+	
+	
+	}
 	
 }
