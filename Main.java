@@ -1,4 +1,11 @@
 public class Main {
+	
+	/**
+	 *Variable de debuggage pour afficher la grille
+	 */
+	public static final boolean DEBUG = false;
+	
+	
 	public static void main( String [] args){
 		Rules.afficherRegles(Translation.Rules);
 		Game gameAvecUnPetitG = new Game();

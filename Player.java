@@ -109,4 +109,16 @@ public class Player{
 	public int getNumberRedChip(){
 		return m_bank.getChipNumber();
 	}
+	
+	/**
+	 *Remove a chip and a storage place to player
+	 */
+	public void removeRedChipAnd1StoragePlace(){
+		int playerStorage = getNumberRedChip()-1;
+		m_bank = new Storage(getStorageLength()-1);
+		m_position = new Position();
+		for (int i=0; i < playerStorage; i++){
+			addRedChip();
+		}	
+	}
 }

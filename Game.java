@@ -96,29 +96,24 @@ public class Game{
 	Ecran.afficher(Translation.redChip," : ");
 	displayRedChip();
 	Ecran.sautDeLigne();
-	Ecran.afficherln(m_grid.toDebugDisplay(m_player.getPosition()));
+	m_rule.printExtraInformation(m_grid, m_player);
+	if (Main.DEBUG){
+		Ecran.afficherln(m_grid.toDebugDisplay(m_player.getPosition()));
+	} else {
+		Ecran.afficherln(m_grid.toDisplay(m_player.getPosition()));
+	}
 	Ecran.sautDeLigne();
 	}
 	
 	
 	/**
 	*Resultat de la partie
-	*Victoire
-	*Defaite
+	*Victoire / Defaite
 	*Abandon
 	*/
 	public void endGame(){
-	if (m_rule.hasWin(m_grid, m_player) ) {
-	Ecran.afficherln(Translation.success);
-	Ecran.afficherln(Translation.goodBye);
-
-		
-	}
-	else if (m_rule.hasLose(m_grid, m_player)){
-	Ecran.afficherln(Translation.defeat);
-	Ecran.afficherln(Translation.youLose);	
-		
-		
+	if (m_rule.hasWin(m_grid, m_player) || m_rule.hasLose(m_grid, m_player)) {
+		m_rule.endGame(m_grid, m_player);
 	}
 	else {
 	Ecran.afficherln(Translation.putGreenChipCell);

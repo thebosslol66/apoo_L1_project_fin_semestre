@@ -42,7 +42,9 @@ public class Translation {
 	
 	public static final String goodBye = "Bye Bye !";
 	
-	public static final String defeat = "Malheureusement vous avez atteint la limite de pions rouge... ";
+	public static final String defeatMaxRedChip = "Malheureusement vous avez atteint la limite de pions rouge... ";
+	
+	public static final String defeatMaxMove = "Malheureusement vous avez mis trop de coup pour gagner... ";
 	
 	public static final String youLose = "Vous avez perdu !!!!! ";
 	
@@ -51,6 +53,8 @@ public class Translation {
 	public static final String seeGridBelow = "Comme vous pouvez voir sur la grille en dessous";
 	
 	public static final String mystere = "choucroute";
+	
+	public static final String moveRemaining = "Il vous reste %s coup(s) pour gagner";
 	
 	
 

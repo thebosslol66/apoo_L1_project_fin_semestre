@@ -71,7 +71,7 @@ public class Rules {
 				m_sidesDice = 6;
 				m_choucrouteRule = false;
 				m_maxMove = 20;
-				m_actualMove =20;
+				m_actualMove = 0;
 			
 			}break;
 		}
@@ -205,7 +205,7 @@ public class Rules {
 		return player.hasNoRed();
 	}
 	private boolean hasWinRule3(Grid grid, Player player){
-		return player.hasNoRed() && m_actualMove <= m_maxMove;
+		return player.hasNoRed() && m_actualMove < m_maxMove;
 	}
 	
 	private boolean hasLoseRule1(Grid grid, Player player){
@@ -217,7 +217,7 @@ public class Rules {
 	}
 	
 	private boolean hasLoseRule3(Grid grid, Player player){
-		return player.hasFullRed() || m_actualMove > m_maxMove;
+		return player.hasFullRed() || m_actualMove >= m_maxMove;
 	}
 	
 	
@@ -356,7 +356,7 @@ public class Rules {
 				else if (grid.getCell(player.getPosition()).hasChoucrouteChip()){ // la case est deja occupee par un pion choucroute : on supprime la choucroute ainsi qu'un pion rouge du joueur et on reduit de 1 son stockage
 					//Ajouter texte de choucroute
 					grid.getCell(player.getPosition()).clearChip();
-					player = new Player(player.getStorageLength()-1, player.getNumberRedChip()-1);
+					player.removeRedChipAnd1StoragePlace();
 				}
 				
 				
@@ -457,6 +457,78 @@ public class Rules {
 				
 				
 				
+		}
+	}
+	
+	public void endGame(Grid grid, Player player){
+		switch(m_idRule){
+			case 1:{
+				endGameRule1(grid, player);
+			}
+			case 2:{
+				endGameRule2( grid, player);
+			}
+			case 3:{
+				endGameRule3( grid, player);
+			}
+		}
+	}
+	
+	private void endGameRule1(Grid grid, Player player){
+		if (hasWin(grid, player)) {
+		Ecran.afficherln(Translation.success);
+		Ecran.afficherln(Translation.goodBye);
+
+			
+		}
+		else if (hasLose(grid, player)){
+		Ecran.afficherln(Translation.defeatMaxRedChip);
+		Ecran.afficherln(Translation.youLose);	
+			
+			
+		}
+	}
+	
+	private void endGameRule2(Grid grid, Player player){
+		if (hasWin(grid, player)) {
+		Ecran.afficherln(Translation.success);
+		Ecran.afficherln(Translation.goodBye);
+
+			
+		}
+		else if (hasLose(grid, player)){
+		Ecran.afficherln(Translation.defeatMaxRedChip);
+		Ecran.afficherln(Translation.youLose);	
+			
+			
+		}
+	}
+	
+	private void endGameRule3(Grid grid, Player player){
+		if (hasWin(grid, player)) {
+		Ecran.afficherln(Translation.success);
+		Ecran.afficherln(Translation.goodBye);
+		}
+		else if (player.hasFullRed()){
+		Ecran.afficherln(Translation.defeatMaxRedChip);
+		Ecran.afficherln(Translation.youLose);
+		}
+		else if (m_actualMove >= m_maxMove){
+		Ecran.afficherln(Translation.defeatMaxMove);
+		Ecran.afficherln(Translation.youLose);
+		}
+	}
+	
+	public void printExtraInformation(Grid grid, Player player){
+		switch(m_idRule){
+			case 1:{
+			}
+			case 2:{
+			}
+			case 3:{
+				Ecran.formater(Translation.moveRemaining, m_maxMove - m_actualMove);
+				Ecran.sautDeLigne();
+			}
 		}
 	}
 
