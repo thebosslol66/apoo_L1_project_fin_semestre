@@ -26,12 +26,11 @@ public class Game{
 	
 	/**
 	 *Creer une nouvelle partie
-	 *@param width La largeur de la grille
-	 *@param height La hauteur de la grille
+	 *@param rule Les regles pour definir la taille du jeu ainsi que les regles de la partie
 	 */
-	public void newGame(int width, int height, Rules rule){
+	public void newGame(Rules rule){
 		m_rule = rule;
-		m_grid = new Grid(width, height, m_rule.hasChoucrouteRule());
+		m_grid = new Grid(m_rule.getGridWidth(), m_rule.getGridHeight(), m_rule.hasChoucrouteRule());
 		m_player = m_grid.getNewPlayer();
 		m_dice = new Dice(m_rule.getNumberSidesDice());
 	}

@@ -3,17 +3,45 @@
  */
 public class Rules {
 	
-	
+	/**
+	 *L'id de la regle du jeu actuelle
+	**/
 	private int m_idRule;
 	
+	/**
+	 *Y a t il des choucroutes dans le jeu
+	*/
 	private boolean m_choucrouteRule;
 	
-	
+	/**
+	 *Le nombre de face que contient le de
+	*/
 	private int m_sidesDice;
 	
+	/**
+	 *Le nombre maximal de mouvement pour le jeu
+	 */
 	private int m_maxMove;
 	
+	/**
+	 *Le nombre actuel de coup
+	  */
 	private int m_actualMove;
+	
+	/**
+	 *Permet de creer la largeur de la grille en fonction du jeu
+	  */
+	private int m_gridWidth;
+	
+	/**
+	 *Permet de creer la hauteur de la grille en fonction du jeu
+	  */
+	private int m_gridHeight;
+	
+	/**
+	 *Le nombre maximal de regles disponible
+	  */
+	public static final int nbRules = 3;
 	
 	
 	/**
@@ -22,6 +50,9 @@ public class Rules {
 	*/
 	Rules(int idRule){
 		m_idRule = idRule;
+		
+		m_gridWidth = 4;
+		m_gridHeight = 3;
 		
 		switch(m_idRule){
 			case 1:{
@@ -46,6 +77,14 @@ public class Rules {
 		}
 		
 		
+	}
+	
+	public int getGridWidth(){
+		return m_gridWidth;
+	}
+	
+	public int getGridHeight(){
+		return m_gridHeight;
 	}
 	
 	// ..

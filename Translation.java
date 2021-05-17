@@ -10,7 +10,9 @@ public class Translation {
 							+"Le troisieme : le jeu 'normal' mais avec un maximum de 20 coups donc reflechissez bien !!\n"
 							+ "Appuyez sur 1 pour avoir acces au jeu de base !\n"
 							+ "Appuyez sur 2 pour avoir acces au jeu choucroute ! \n"
-							+"Appuyez sur 3 pour avoir acces au jeu avec un nombre maximum de 20coups !";
+							+"Appuyez sur 3 pour avoir acces au jeu avec un nombre maximum de 20 coups !";
+	
+	public static final String ruleChoice = "Saisissez le numero du jeu auquel vous voulez jouer ou 0 pour quitter";
 	
 	public static final String wrongWriting = "Erreur dans la saisie, veuillez reessayer";
 	
@@ -34,7 +36,7 @@ public class Translation {
 	
 	public static final String redChip = "Pions rouges";
 	
-	public static final String actions = "Poser (p/P), Ramasser (r/R), Avancer (a/a) ou Quitter (q/Q) ?";
+	public static final String actions = "Poser (p/P), Ramasser (r/R), Avancer (a/A) ou Quitter (q/Q) ?";
 	
 	public static final String success = "BRAVO !! Vous avez gagne";
 	
