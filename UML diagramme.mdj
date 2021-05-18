@@ -3631,7 +3631,7 @@
 											"top": 562,
 											"width": 347.19140625,
 											"height": 13,
-											"text": "«action»+newGame(width: int, height: int, rule: Rules)",
+											"text": "«action»+newGame(rule: Rules)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5886,24 +5886,6 @@
 								{
 									"_type": "UMLParameter",
 									"_id": "AAAAAAF5cKQTfE3p61w=",
-									"_parent": {
-										"$ref": "AAAAAAF5cKAP1U23FWI="
-									},
-									"name": "width",
-									"type": "int"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF5cKQdUk3ssyU=",
-									"_parent": {
-										"$ref": "AAAAAAF5cKAP1U23FWI="
-									},
-									"name": "height",
-									"type": "int"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAF5cKQoLE3vtAc=",
 									"_parent": {
 										"$ref": "AAAAAAF5cKAP1U23FWI="
 									},
