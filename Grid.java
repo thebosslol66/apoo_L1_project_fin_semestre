@@ -48,7 +48,7 @@ public class Grid {
 	 *@return Le joueur initialise pour la grille
 	 */
 	public Player getNewPlayer(){
-		Player player = new Player((int)Math.ceil(m_width*m_height/2), (int)Math.ceil(m_width*m_height/2) - (int)Math.ceil(m_width*m_height/3));
+		Player player = new Player((int)Math.floor(m_width*m_height/2), (int)Math.floor(m_width*m_height/2) - (int)Math.floor(m_width*m_height/3));
 		return player;
 	}
 	
@@ -56,8 +56,8 @@ public class Grid {
 	 *Initialise la grille avec les pions de couleur sur la grille ainsi que la banque de pions vert
 	 */
 	private void setCaseDistribution(){
-		int nbRedCeil = (int)Math.ceil((m_width*m_height)/3);
-		int nbGreenCeil = (int)Math.ceil((m_width*m_height)/3);
+		int nbRedCeil = (int)Math.floor((m_width*m_height)/3);
+		int nbGreenCeil = (int)Math.floor((m_width*m_height)/3);
 		
 		for (int i = 0; i < m_height; i++){
 			for (int j = 0; j < m_width; j++){
@@ -96,7 +96,7 @@ public class Grid {
 			}
 		}
 		
-		for (int i=0; i < Math.floor(m_width*m_height/3); i++){
+		for (int i=0; i < Math.ceil(m_width*m_height/3); i++){
 			addGreenChip();
 		}
 	}
@@ -106,8 +106,8 @@ public class Grid {
 	 *Initialise la grille avec les pions de couleur sur la grille ainsi que la banque de pions vert et ajoute le pion choucroute
 	 */
 	private void setCaseChoucrouteDistribution(){
-		int nbRedCeil = (int)Math.ceil((m_width*m_height)/3);
-		int nbGreenCeil = (int)Math.ceil((m_width*m_height)/3);
+		int nbRedCeil = (int)Math.floor((m_width*m_height)/3);
+		int nbGreenCeil = (int)Math.floor((m_width*m_height)/3);
 		int nbChoucrouteCeil = (int)Math.floor((m_width*m_height)/6);
 		
 		for (int i = 0; i < m_height; i++){
@@ -160,7 +160,7 @@ public class Grid {
 			}
 		}
 		
-		for (int i=0; i < Math.floor(m_width*m_height/3); i++){
+		for (int i=0; i < Math.ceil(m_width*m_height/3); i++){
 			addGreenChip();
 		}
 	}
