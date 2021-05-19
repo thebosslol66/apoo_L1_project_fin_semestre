@@ -1,0 +1,37 @@
+en particulier, quelle(s) méthode(s) de quelle(s) classe(s) sont appelées et 
+dans quel ordre pour chacune de ces deux actions
+Explication des actions utilisateurs : 
+1) Poser un pion
+1.1) Case vide
+1.2) Case déjà occupée par un pion rouge
+1.3) Case déjà occupée par un pion vert
+
+2) Ramasser un pion
+2.1) Case vide
+2.2) Case occupée par un pion rouge
+2.3) Case occupée par un pion vert
+
+1.1) La case est vide : on pose un pion rouge.
+La méthode getCell() de grid renvoie une cellule, cette méthode getCell est appelée avec en paramètre la méthode getPosition() de Player, pour avoir la position du joueur.
+Maintenant qu'on a la cellule qu'on veut, on ajoute un pion avec la méthode setChip() de Cell qui prend en paramètre la méthode removeRedChip() de Player.
+
+1.2) La case est déjà occupée par un pion rouge, le dépot n'a pas lieu... pion rouge +1
+On utilise la méthode addRedChip() de la classe Player est appelée, cette méthode permet d'ajouter un pion rouge au joueur, on met en paramètre de cette méthode la position du joueur. Ensuite, on met en paramètre de addRedChip() la méthode getCell de Grid et en on met en paramètre de getCell() la méthode getPosition() de Player qui va nous retourner la cellule en question.
+Finalement on utilise clearChip() de Cell qui va supprimer le pion de la case en question.
+
+1.3) La case est déjà occupé par un pion vert, le dépot n'a pas lieu
+Il ne se passe rien.
+
+2.1) Case vide
+Il ne se passe rien. La case étant vide, on ne ramasse rien
+
+2.2) Case occupée par un pion rouge : on ramasse le pion rouge et on va poser un pion vert.
+On commence par ajouter le pion rouge au joueur, pour cela on utilise la méthode addRedChip de Player à laquelle on met en paramètre la cellule avec getCell() de Grid, et à cette même méthode,
+on met en paramètre la position du joueur avec getPosition() de Player, puis on fait un clearChip() de Cell sur la case, vu qu'il faut enlever le pion de la case.
+
+On ajoute ensuite le pion vert, pour cela on utilise getCell() de Grid afin d'avoir la position,
+on met en paramètre getPosition() de player, pour la position du joueur, puis on utilise setChip() de Cell qui prend en paramètre la méthode removeGreenChip() de Grid qui supprime un pion à la banque afin d'ajouter un nouveau pion a la case en remplacant l'ancien.
+	 
+
+
+2.3) Case occupée par un pion vert, on ramasse le pion vert et il va dans la banque de la grille
