@@ -1,0 +1,6 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Présentation globale de la structure du programme}{1}{section.1}%
+\contentsline {section}{\numberline {2}Le fonctionnement de main et la compilation du programme}{1}{section.2}%
+\contentsline {section}{\numberline {3}L'algorithme de répartition des pions sur la grille et dans les banques}{1}{section.3}%
+\contentsline {section}{\numberline {4}Comment sont traitées les actions utilisateur}{1}{section.4}%
+\contentsline {section}{\numberline {5}Les bonus que nous avons ajouté}{1}{section.5}%
