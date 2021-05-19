@@ -284,7 +284,7 @@ public class Rules {
 			} break;
 				
 			case 'A':	
-			case 'a': {
+			case 'a': {	
 				Ecran.afficherln(Translation.skip);
 				
 				
@@ -325,7 +325,7 @@ public class Rules {
 				else if (grid.getCell(player.getPosition()).hasChoucrouteChip()){ // la case est deja occupee par un pion choucroute : le depot n a pas lieu .... pion rouge +0
 				Ecran.afficherln(Translation.putGreenChipCell);//Changer le texte
 				}
-				else {
+				else { // quand ya des bugs mais yen a pas
 				Ecran.afficherln(Translation.mystere);	
 					
 				}
