@@ -1,0 +1,12 @@
+Le main : Le jeu va se passer dans le fichier Class "Main".
+On commence par afficher les règles en appelant la méthode static de la classe Rules
+afficherRegles.
+On crée ensuite une nouvelle instance gameAvecUnPetitG  de type Game.
+Puis on affiche les différents types de jeu disponible avec la méthode static ruleChoice
+de la classe Translation.
+On crée un entier choice dont l'utilisateur doit choisir la valeur selon le jeu qu'il a choisi.
+On entre dans la boucle while et on en sort que si choice <0 ou que choice > à l'attribut nbRules
+de la classe Rules.
+Dans cette boucle, on appelle la méthode newGame() de Game avec l'instance qu'on a crée pour créer une nouvelle partie, et on lui met en paramètre le choix de règles qu'on a choisies précédemment.
+On lance ensuite la boucle du jeu avec loopGame() de Game, puis quand le jeu est fini, c'est la méthode endGame() qui est appelée.
+Finalement on affiche de nouveau les règles et l'utilisateur choisit si il veut refaire une partie ou quitter la boucle en appuyant sur 0.
