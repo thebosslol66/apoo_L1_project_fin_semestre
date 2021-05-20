@@ -1,1 +1,10 @@
-Dans les bonus en plus nous 
+Dans les bonus en plus nous avons décidés de créer une classe règle qui gère la règle du jeu de la partie. Chaque règle est attribué a un id dans la classe qui seras initialisé lors de sa création. Cette classe gère l’initialisation de la grille et du jeu en général, les conditions de victoire et de défaite dans la partie ainsi que la boucle principale. Elle est aussi utile pour l'affichage des résultats finaux de la partie.
+
+On a donc trois règles différentes:
+\begin{description}
+\item[La partie normale] On fais une partie sur une grille $4\times 3$ avec les pions disposées selon les règles de bases. Le principe est le même que celui décris dans le devoir.
+
+\item[La partie en mode Choucroute] On fait une partie sur une grille $4\times 3$ avec une quantité et une répartition des pion rouge et vert comme celle q'une partie normale mais avec un pion supplémentaire: le pion Choucroute. Celui-ci peux être pris par le joueur et supprimeras un prion dans l'inventaire du joueur et de la partie. Une place de l'inventaire du joueur seras aussi supprimé pour permettre au joueur de toujours pouvoir perdre la partie. On ne peux pas placer un pion sur une case occupé par une choucroute.
+
+\item[La partie en mode tour limité] On a un nombre de coup limité, ici 20 coups  sur une grille $4\times 3$ avec les pions disposées selon les règles de bases. La condition de défaite va alors être changé et on va vérifier si il lui reste assez de coup. On a aussi une fonction dans cette classe pour afficher des informations supplémentaire pour chaque tour notamment le nombre de coups restants. De plus a chaque tour on va incrémenter le compteur de coup jusqu’à ce que le joueur n'en ai plus ou qu'il gagne ou qu'il perde. Dans l'affichage de la fin on va gérer la fin ou il perd a cause su nombre de coup trop élevé.
+\end{description}
